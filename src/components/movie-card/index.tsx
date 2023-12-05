@@ -30,9 +30,9 @@ const MovieCard = ({ movie }: MovieCardProps) => {
               style={{ width: "400px", height: "180px", borderRadius: "8px" }}
             />
           </Grid>
-          <Grid item xs={8}>
+          <Grid item>
             <Grid container spacing={1} alignItems="center">
-              <Grid item>
+              <Grid item mr={1}>
                 <Typography
                   fontSize={10}
                   color="#E0E0E0"
@@ -41,16 +41,7 @@ const MovieCard = ({ movie }: MovieCardProps) => {
                   {movie.year}
                 </Typography>
               </Grid>
-              <Grid item>
-                <Box
-                  sx={{
-                    width: "4px",
-                    height: "4px",
-                    background: "#BDBDBD",
-                    borderRadius: "50%",
-                  }}
-                />
-              </Grid>
+
               <Grid item>
                 <img
                   src={movie.category === "Movies" ? moviesIcon : tvSeriesIcon}
@@ -59,7 +50,7 @@ const MovieCard = ({ movie }: MovieCardProps) => {
                   height={16}
                 />
               </Grid>
-              <Grid item>
+              <Grid item mr={1}>
                 <Typography
                   fontSize={10}
                   color="#E0E0E0"
@@ -68,16 +59,7 @@ const MovieCard = ({ movie }: MovieCardProps) => {
                   {movie.category}
                 </Typography>
               </Grid>
-              <Grid item>
-                <Box
-                  sx={{
-                    width: "4px",
-                    height: "4px",
-                    background: "#BDBDBD",
-                    borderRadius: "50%",
-                  }}
-                />
-              </Grid>
+
               <Grid item>
                 <Typography
                   fontSize={10}

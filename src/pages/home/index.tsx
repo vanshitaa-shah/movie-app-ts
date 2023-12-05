@@ -38,16 +38,13 @@ const Home = () => {
           component="form"
           sx={{
             display: "flex",
-            alignItems: "center",
-            borderRadius: "default",
             p: 1,
             backgroundColor: "#10141f",
-            border: "none",
           }}
         >
           <InputBase
             placeholder="Search for movies or TV series"
-            sx={{ ml: 1, flex: 1, color: "white", border: "none" }}
+            sx={{ ml: 1, flex: 1, color: "white" }}
             value={search}
             onChange={handleSearch}
             startAdornment={
@@ -83,7 +80,7 @@ const Home = () => {
         ) : (
           <Box width="100%">
             <Typography>
-              Found {searchList.length} results for "{search}"{""}
+              Found {searchList.length} results for "{search}"
             </Typography>
             <MovieList recommendList={searchList} />
           </Box>

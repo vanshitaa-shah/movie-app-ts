@@ -25,7 +25,6 @@ const MovieTrendCard = ({ movie }: MovieCardProps) => {
         style={{
           padding: 0,
           position: "relative",
-          overflowX: "scroll",
           display: "flex",
         }}
       >
@@ -44,7 +43,6 @@ const MovieTrendCard = ({ movie }: MovieCardProps) => {
           borderRadius="8px"
         />
         <Stack
-          mt="6"
           spacing={0}
           position="absolute"
           bottom={0}
@@ -53,7 +51,7 @@ const MovieTrendCard = ({ movie }: MovieCardProps) => {
           p={4}
         >
           <Grid container alignItems="center" spacing={1}>
-            <Grid item>
+            <Grid item mr={1}>
               <Typography
                 fontSize={10}
                 color="#E0E0E0"
@@ -62,16 +60,7 @@ const MovieTrendCard = ({ movie }: MovieCardProps) => {
                 {movie.year}
               </Typography>
             </Grid>
-            <Grid item>
-              <Box
-                sx={{
-                  width: "1rem",
-                  height: "1rem",
-                  bg: "#E0E0E0",
-                  borderRadius: "full",
-                }}
-              />
-            </Grid>
+
             <Grid item>
               <img
                 src={movie.category === "Movies" ? moviesIcon : tvSeriesIcon}
@@ -80,7 +69,8 @@ const MovieTrendCard = ({ movie }: MovieCardProps) => {
                 height={16}
               />
             </Grid>
-            <Grid item>
+
+            <Grid item mr={1}>
               <Typography
                 fontSize={10}
                 color="#E0E0E0"
@@ -89,16 +79,7 @@ const MovieTrendCard = ({ movie }: MovieCardProps) => {
                 {movie.category}
               </Typography>
             </Grid>
-            <Grid item>
-              <Box
-                sx={{
-                  width: "1rem",
-                  height: "1rem",
-                  bg: "#E0E0E0",
-                  borderRadius: "full",
-                }}
-              />
-            </Grid>
+
             <Grid item>
               <Typography
                 fontSize={10}
@@ -109,28 +90,27 @@ const MovieTrendCard = ({ movie }: MovieCardProps) => {
               </Typography>
             </Grid>
           </Grid>
+
           <Typography aria-label="movie rating" color="#E0E0E0" padding={0}>
             {movie.title}
           </Typography>
         </Stack>
+
         <Box
           style={{
             position: "absolute",
             top: 0,
-            left: 0,
             right: 0,
-            display: "flex",
-            justifyContent: "flex-end",
-            padding: "16px",
+            padding: "10px",
           }}
         >
           <Box
             sx={{
               p: "1rem",
               backgroundColor: "black",
-              borderRadius: "100%",
+              borderRadius: "50%",
               cursor: "pointer",
-              "&:hover": { opacity: 0.8 },
+              "&:hover": { opacity: 0.5 },
             }}
             onClick={() => handleToggleBookmark(movie.id)}
           >
