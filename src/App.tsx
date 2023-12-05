@@ -5,9 +5,9 @@ import { router } from "./routes";
 
 function App() {
   return (
-    <MovieProvider>
-      <RouterProvider router={router} />
-    </MovieProvider>
+    // <MovieProvider>
+    <RouterProvider router={router} />
+    // </MovieProvider>
   );
 }
 

@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useContext, useState } from "react";
+import React, { ChangeEvent, useState } from "react";
 import Layout from "../../layout";
 import MovieList from "../../components/movie-list";
 
@@ -11,13 +11,13 @@ import {
 } from "@mui/material";
 import SearchIcon from "../../assets/icons/icon-search.svg";
 import { MovieDataType } from "../../assets/data";
-import { MovieContext } from "../../context/MovieContext";
+import { useSelector } from "react-redux";
+import { RootState } from "../../store";
 
 const TvSeries = () => {
   const [search, setSearch] = useState("");
   const [searchList, setSearchList] = useState<MovieDataType[]>([]);
-  const { state } = useContext(MovieContext);
-  const { movies } = state;
+  const movies = useSelector((state: RootState) => state.movie.movies);
   const seriesList = movies.filter((item) => item.category === "TV Series");
 
   const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {

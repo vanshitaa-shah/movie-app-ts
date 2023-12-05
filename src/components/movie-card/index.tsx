@@ -6,14 +6,18 @@ import BookmarkIcon from "../icons/bookmark-icon";
 import BookmarkEmptyIcon from "../icons/bookmark-empy-icon";
 import tvSeriesIcon from "../../assets/icons/icon-category-tv.svg";
 import moviesIcon from "../../assets/icons/icon-category-movie.svg";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "../../store";
+import { movieActions } from "../../store/movieSlice";
 
 interface MovieCardProps {
   movie: MovieDataType;
 }
 const MovieCard = ({ movie }: MovieCardProps) => {
-  const { dispatch } = useContext(MovieContext);
+  const dispatch = useDispatch<AppDispatch>();
+
   const handleToggleBookmark = (id: string) => {
-    dispatch({ type: "TOGGLE BOOKMARK", id });
+    dispatch(movieActions.toggleBookmark(id));
   };
 
   return (
